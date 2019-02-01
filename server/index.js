@@ -15,5 +15,7 @@ app.post(`/api/property`, ctrl.postProperty)
 
 app.get(`/api/getproperty`, ctrl.getProperty)
 
+app.delete(`/api/deleteproperty`, ctrl.deleteProperty)
+
 serverPort = process.env.SERVER_PORT || 4000
 app.listen(serverPort, ()=>{console.log(`listening on the port ${serverPort}`)})

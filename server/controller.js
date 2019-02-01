@@ -15,5 +15,15 @@ module.exports = {
             res.sendStatus(500)
             console.log(err)
         })
+    },
+    deleteProperty: (req, res, next)=>{
+        const {theID} = req.body
+        // console.log(theID)
+        req.app.get('db').delete_property([theID])
+        .then(()=>res.sendStatus(200))
+        .catch(err=>{
+            res.sendStatus(500)
+            console.log(err)
+        })
     }
 }

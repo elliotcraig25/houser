@@ -9,8 +9,11 @@ class PropertyList extends React.Component {
     constructor(){
         super()
         this.state = {
-            homeInfo: []
+            homeInfo: [],
+            iNeedToSetState: 0
         }
+        this.boundTo = this.boundTo.bind(this)
+        this.deleteTheItem = this.deleteTheItem.bind(this)
     }
     
     componentDidMount(){
@@ -21,14 +24,32 @@ class PropertyList extends React.Component {
             })
             console.log(this.state)
         })
-        
+    }
+
+    boundTo(fallingInLove){
+        return (
+            <div>
+                {fallingInLove}
+            </div>
+        )
+    }
+
+    deleteTheItem(){
+        return (theID)=>{
+            
+            axios.delete(`/api/deleteproperty`, {theID})
+            .then(
+                
+                (response)=>{console.log(response)}
+            )
+        }
     }
 
     render(){
         const homeListings = this.state.homeInfo.map((item)=>{
             return (
                 <div key={item.property_id}>
-                    <ListItems propertyName={item.property_name} address={item.address} city={item.city} state={item.state} zip={item.zip}/>
+                    <ListItems propertyId={item.property_id} propertyName={item.property_name} address={item.address} city={item.city} state={item.state} zip={item.zip} boundTo={this.boundTo} deleteTheItem={this.deleteTheItem}/>
                 </div>
                 
             )
@@ -37,8 +58,8 @@ class PropertyList extends React.Component {
             <div>
                 <div>
                     Home Listings
-                </div>
-                <div>
+                </div><br/>
+                <div className="prop_list_parent">
                     {homeListings}
                 </div>
             </div>

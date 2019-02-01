@@ -22,3 +22,15 @@
     justify-content: space-between;
     border-bottom: solid black 1px;
 }
+
+.list_item {
+    border: solid black 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.prop_list_parent {
+    display: flex;
+    flex-direction: column-reverse;
+}

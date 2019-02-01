@@ -17,9 +17,9 @@ module.exports = {
         })
     },
     deleteProperty: (req, res, next)=>{
-        const {theID} = req.body
-        // console.log(theID)
-        req.app.get('db').delete_property([theID])
+        const {id} = req.body
+        console.log(id)
+        req.app.get('db').delete_property(id)
         .then(()=>res.sendStatus(200))
         .catch(err=>{
             res.sendStatus(500)

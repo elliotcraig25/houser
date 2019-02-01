@@ -39,7 +39,7 @@ const ListItems = props =>{
                 </div>
             </div>
             <div>
-                <button onClick={deleteTheItem()}>X</button>
+                <button onClick={deleteTheItem(props.propertyId)}>X</button>
             </div>
         </div>
     )

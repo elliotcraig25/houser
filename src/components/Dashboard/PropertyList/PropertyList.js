@@ -34,13 +34,13 @@ class PropertyList extends React.Component {
         )
     }
 
-    deleteTheItem(){
-        return (theID)=>{
-            
-            axios.delete(`/api/deleteproperty`, {theID})
+    deleteTheItem(id){
+        return ()=>{
+            console.log('the id', id)
+            axios.delete(`/api/deleteproperty`, {id})
             .then(
                 
-                (response)=>{console.log(response)}
+                // (response)=>{console.log(response)}
             )
         }
     }

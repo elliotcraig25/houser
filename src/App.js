@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import {HashRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './ducks/store'
+
 import './App.css';
-import axios from 'axios'
+import routes from './routes'
+
+import Header from './components/Header/Header'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <p>hey there</p>
-      </div>
+      <Provider store={store}>
+        <HashRouter>
+          <div className="App">
+            <Header />
+            {routes}
+          </div>
+        </HashRouter>
+      </Provider>
     );
   }
 }

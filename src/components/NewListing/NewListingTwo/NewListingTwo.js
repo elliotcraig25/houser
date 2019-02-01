@@ -26,7 +26,7 @@ class NewListingTwo extends React.Component {
                     </div>
                     <div>
                         <Link to="/new_listing_one"><button>Previous Step</button></Link>
-                        <Link to="/"><button>Next Step</button></Link>
+                        <Link to="/new_listing_three"><button>Next Step</button></Link>
                     </div>
                 </div>
             </div>

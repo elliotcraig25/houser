@@ -1,14 +1,25 @@
 const initialState = {
-
+    propertyName: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
 }
 
-//type var goes here
+const UPDATE_LISTING_ONE = 'UPDATE_LISTING_ONE'
 
-//payload functions go here
+export function updateListingOne(listingOneInput){
+    console.log(`i think it might be working`)
+    return {
+        type: UPDATE_LISTING_ONE,
+        payload: listingOneInput
+    }
+}
 
 export default function reducer(state = initialState, action){
     switch(action.type){
-        //case
+        case UPDATE_LISTING_ONE:
+            return Object.assign({}, state, action.payload)
         default:
             return state
     }

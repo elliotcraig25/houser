@@ -5,7 +5,6 @@ import DashHeader from './DashHeader/DashHeader'
 
 class Dashboard extends Component {
 
-
     render(){
         return (
             <div className="main_dash">

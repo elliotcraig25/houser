@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const NewL1Complete = ()=>{
     return (
         <div>
-            <Link to="/">
+            <Link to="/new_listing_two">
                 <button>Next Step</button>
             </Link>
         </div>

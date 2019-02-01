@@ -4,6 +4,9 @@ const initialState = {
     city: '',
     state: '',
     zip: '',
+    image: '',
+    mmAmount: '',
+    dmRent: ''
 }
 
 const UPDATE_LISTING_ONE = 'UPDATE_LISTING_ONE'

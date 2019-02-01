@@ -1,4 +1,4 @@
-.main_dash {
+.new_listing {
     width: 100%;
     height: calc(100vh - 75px);
     background-color: #AFD4C0;
@@ -6,19 +6,21 @@
     justify-content: center;
 }
 
-.dash_content {
+.new_listing_content {
     height: 100%;
     width: 720px;
     background-color: #E5F4EC;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.dash_header {
-    height: 75px;
-    width: 95%;
+.form_parent {
+    width: 70%;
+    border: solid black 1px;
+}
+
+.city_state_zip {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    border-bottom: solid black 1px;
 }

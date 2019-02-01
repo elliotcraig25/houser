@@ -13,5 +13,7 @@ massive(process.env.CONNECTION_STRING).then((db)=>{
 
 app.post(`/api/property`, ctrl.postProperty)
 
+app.get(`/api/getproperty`, ctrl.getProperty)
+
 serverPort = process.env.SERVER_PORT || 4000
 app.listen(serverPort, ()=>{console.log(`listening on the port ${serverPort}`)})

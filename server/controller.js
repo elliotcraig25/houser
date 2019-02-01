@@ -7,5 +7,13 @@ module.exports = {
             res.sendStatus(500)
             console.log(err)
         })
+    },
+    getProperty: (req, res, next)=>{
+        req.app.get('db').get_property_info()
+        .then(info=>res.status(200).send(info))
+        .catch(err=>{
+            res.sendStatus(500)
+            console.log(err)
+        })
     }
 }

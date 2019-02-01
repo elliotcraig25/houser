@@ -11,7 +11,7 @@
     width: 720px;
     background-color: #E5F4EC;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .dash_header {

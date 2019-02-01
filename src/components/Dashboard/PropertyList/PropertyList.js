@@ -1,34 +1,49 @@
 import React from 'react'
 import '../dashboard.css'
-import {connect} from 'react-redux'
+import axios from 'axios';
 
-const PropertyList = props => {
+import ListItems from './ListItems/ListItems'
+
+
+class PropertyList extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            homeInfo: []
+        }
+    }
     
+    componentDidMount(){
+        axios.get(`/api/getproperty`)
+        .then(response=>{
+            this.setState({
+                homeInfo: response.data
+            })
+            console.log(this.state)
+        })
+        
+    }
 
-    return (
-        <div>
+    render(){
+        const homeListings = this.state.homeInfo.map((item)=>{
+            return (
+                <div key={item.property_id}>
+                    <ListItems propertyName={item.property_name} address={item.address} city={item.city} state={item.state} zip={item.zip}/>
+                </div>
+                
+            )
+        })
+        return (
             <div>
-                Home Listings
+                <div>
+                    Home Listings
+                </div>
+                <div>
+                    {homeListings}
+                </div>
             </div>
-            <div>
-                <p>property name: {props.propertyName}</p>
-                <p>address: {props.address}</p>
-                <p>city: {props.city}</p>
-                <p>state: {props.state}</p>
-                <p>zip: {props.zip}</p>
-            </div>
-        </div>
-    )
-}
-
-function mapStateToProps(state){
-    return {
-        propertyName: state.propertyName,
-        address: state.address,
-        city: state.city,
-        state: state.state,
-        zip: state.zip
+        )
     }
 }
 
-export default connect(mapStateToProps)(PropertyList)
+export default PropertyList

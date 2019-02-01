@@ -4,14 +4,6 @@ import {connect} from 'react-redux'
 
 const PropertyList = props => {
     
-    const homeListings = props.state.map(item=>{
-        return (
-            <div>
-                {item}
-            </div>
-        )
-    })
-    
 
     return (
         <div>
@@ -19,7 +11,11 @@ const PropertyList = props => {
                 Home Listings
             </div>
             <div>
-                {homeListings}
+                <p>property name: {props.propertyName}</p>
+                <p>address: {props.address}</p>
+                <p>city: {props.city}</p>
+                <p>state: {props.state}</p>
+                <p>zip: {props.zip}</p>
             </div>
         </div>
     )

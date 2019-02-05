@@ -34,10 +34,10 @@ class PropertyList extends React.Component {
         )
     }
 
-    deleteTheItem(id){
+    deleteTheItem(abc){
         return ()=>{
-            console.log('the id', id)
-            axios.delete(`/api/deleteproperty`, {id: id})
+            console.log('the id', abc)
+            axios.delete(`/api/deleteproperty`, {id: abc})
             .then(
                 
                 // (response)=>{console.log(response)}
